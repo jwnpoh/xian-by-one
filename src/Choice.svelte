@@ -1,8 +1,14 @@
 <script>
+  import { fade } from "svelte/transition";
   export let choiceColor;
 </script>
 
-<div class="choiceCard" style="background-color: {choiceColor};" on:click />
+<div
+  transition:fade
+  class="choiceCard"
+  style="background-color: {choiceColor};"
+  on:click
+/>
 
 <style>
   .choiceCard {

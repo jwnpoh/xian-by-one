@@ -2,7 +2,9 @@
   import Card from "./Card.svelte";
   import Choice from "./Choice.svelte";
   import Button from "./Button.svelte";
+  import Prog from "./Prog.svelte";
 
+  let showProg = true;
   let showChoice = false;
   let choiceColor = "purple";
   let toggleText = false;
@@ -15,12 +17,24 @@
   const flipCards = () => {
     toggleText = !toggleText;
   };
+
+  const showCard = () => {
+    showProg = !showProg;
+  };
 </script>
 
 <main>
-  {#if showChoice}
+  <div class="btn-bottom">
+    <Button toggleText={showProg} on:click={showCard}>Show programme</Button>
+  </div>
+  {#if showProg}
+    <Prog imgPath="/Prog_v1-1_trial3.jpg" />
+  {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
   {:else}
+    <div class="btn-top">
+      <Button {toggleText} on:click={flipCards}>🄰</Button>
+    </div>
     <Card
       on:click={() => handleClick("red")}
       --boxColor="255,0,0"
@@ -45,9 +59,6 @@
       {toggleText}
       text="NOSTALGIA"
     />
-    <div class="btn">
-      <Button {toggleText} on:click={flipCards}>🄰</Button>
-    </div>
   {/if}
 </main>
 
@@ -63,8 +74,12 @@
     align-content: stretch;
     height: 75vh;
   }
-
-  .btn {
+  .btn-top {
+    position: fixed;
+    top: 10px;
+    right: 25px;
+  }
+  .btn-bottom {
     position: fixed;
     bottom: 15px;
     right: 25px;

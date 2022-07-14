@@ -19,7 +19,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 40%;
-    height: 40%;
+    height: 20vh;
     box-sizing: border-box;
     padding: 10px;
     margin: 15px;

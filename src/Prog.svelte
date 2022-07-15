@@ -1,5 +1,7 @@
 <script>
-  import { onMount, beforeUpdate, afterUpdate, onDestroy } from "svelte";
+  import { onMount, onDestroy } from "svelte";
+  import { fade } from "svelte/transition";
+  import { sineOut } from "svelte/easing";
 
   export let imgPath;
   let scroll;
@@ -14,7 +16,7 @@
   });
 </script>
 
-<div class="img">
+<div class="img" transition:fade={{ duration: 150, easing: sineOut }}>
   <img src={imgPath} alt="Programme Booklet" />
 </div>
 

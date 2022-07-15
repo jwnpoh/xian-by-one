@@ -1,10 +1,8 @@
 <script>
-  export let toggleText;
+  export let showProg;
 </script>
 
-<button class:text-on={toggleText} class:text-off={!toggleText} on:click
-  ><slot /></button
->
+<button class:on={showProg} class:off={!showProg} on:click><slot /></button>
 
 <style>
   button {
@@ -18,11 +16,12 @@
     box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.3);
   }
 
-  .text-on {
-    background: rgba(148, 148, 148, 0.8);
-    color: white;
+  .on {
+    background: rgb(200, 200, 200);
+    color: rgb(153, 153, 153);
   }
-  .text-off {
+
+  .off {
     background: rgba(40, 40, 40, 0.8);
     color: rgb(153, 153, 153);
   }

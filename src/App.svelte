@@ -2,6 +2,7 @@
   import Card from "./Card.svelte";
   import Choice from "./Choice.svelte";
   import Button from "./Button.svelte";
+  import ButtonBottom from "./ButtonBottom.svelte";
   import Prog from "./Prog.svelte";
 
   import Icon from "svelte-awesome";
@@ -29,8 +30,8 @@
 
 <main>
   <div class="btn-bottom">
-    <Button {toggleText} {showProg} on:click={showCard}
-      ><Icon data={thLarge} /></Button
+    <ButtonBottom {showProg} on:click={showCard}
+      ><Icon data={thLarge} style="transform:rotate(90deg)" /></ButtonBottom
     >
   </div>
   {#if showProg}
@@ -39,9 +40,7 @@
     <Choice on:click={handleClick} {choiceColor} />
   {:else}
     <div class="btn-top">
-      <Button {toggleText} {showProg} on:click={flipCards}
-        ><Icon data={font} scale="0.8" /></Button
-      >
+      <Button {toggleText} on:click={flipCards}><Icon data={font} /></Button>
     </div>
     <div class="container">
       <Card
@@ -99,5 +98,6 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
+    margin: auto;
   }
 </style>

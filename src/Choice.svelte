@@ -4,7 +4,7 @@
 </script>
 
 <div
-  transition:fade
+  transition:fade={{ duration: 300 }}
   class="choiceCard"
   style="background-color: {choiceColor};"
   on:click
@@ -13,7 +13,7 @@
 <style>
   .choiceCard {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;

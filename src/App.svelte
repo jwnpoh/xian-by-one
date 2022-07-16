@@ -35,9 +35,7 @@
     >
   </div>
   {#if showProg}
-    <Prog
-      imgPath="https://storage.googleapis.com/xian-by-one/xian_by_one_programme.jpg"
-    />
+    <Prog imgPath="/xian_by_one_programme.jpg" />
   {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
   {:else}

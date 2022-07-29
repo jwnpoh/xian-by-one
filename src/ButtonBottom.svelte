@@ -12,7 +12,6 @@
     border-radius: 5px;
     padding: 5px 4px;
     font-weight: 900;
-    font-size: 1.1em;
     box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.3);
   }
 

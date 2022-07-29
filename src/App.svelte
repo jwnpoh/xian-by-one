@@ -31,7 +31,11 @@
 <main>
   <div class="btn-bottom">
     <ButtonBottom {showProg} on:click={showCard}
-      ><Icon data={thLarge} style="transform:rotate(90deg)" /></ButtonBottom
+      ><Icon
+        data={thLarge}
+        scale={1.2}
+        style="transform:rotate(90deg)"
+      /></ButtonBottom
     >
   </div>
   {#if showProg}

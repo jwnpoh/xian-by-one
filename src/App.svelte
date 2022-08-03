@@ -39,7 +39,7 @@
     >
   </div>
   {#if showProg}
-    <Prog imgPath="/xian_by_one_programme.jpg" />
+    <Prog imgPath="/xian_by_one_espl.jpg" />
   {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
   {:else}

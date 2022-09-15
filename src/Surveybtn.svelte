@@ -1,8 +1,11 @@
 <script>
+  import { fade } from "svelte/transition";
   export let formLink;
 </script>
 
-<a href={formLink} target="_blank"><button><slot /></button></a>
+<div transition:fade={{ duration: 100 }}>
+  <a href={formLink} target="_blank"><button><slot /></button></a>
+</div>
 
 <style>
   button {

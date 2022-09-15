@@ -16,7 +16,7 @@
   });
 </script>
 
-<div class="img" transition:fade={{ duration: 150, easing: sineOut }}>
+<div class="img" transition:fade={{ duration: 250, easing: sineOut }}>
   <img src={imgPath} alt="Programme Booklet" />
 </div>
 

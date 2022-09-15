@@ -8,6 +8,9 @@
 
 <style>
   button {
+    position: fixed;
+    top: 25px;
+    right: 25px;
     border: 0;
     display: flex;
     cursor: pointer;

@@ -15,6 +15,7 @@
   let showChoice = false;
   let toggleText = false;
   let choiceColor;
+  let progLoaded = false;
 
   const handleClick = (color) => {
     choiceColor = color;
@@ -32,10 +33,26 @@
 
 <main>
   {#if showProg}
-    <Surveybtn formLink={"https://forms.gle/FJzQ6ovsAoiZbPZM8"}
-      ><Icon data={envelopeOpen} scale={1.2} /></Surveybtn
-    >
-    <Prog imgPath="/xian_by_one_vch.jpg" />
+    {#if progLoaded}
+      <Surveybtn formLink={"https://forms.gle/FJzQ6ovsAoiZbPZM8"}
+        ><Icon data={envelopeOpen} scale={1.2} /></Surveybtn
+      >
+      <div class="btn-bottom">
+        <ButtonBottom {showProg} on:click={showCard}
+          ><Icon
+            data={thLarge}
+            scale={1.2}
+            style="transform:rotate(90deg)"
+          /></ButtonBottom
+        >
+      </div>
+    {/if}
+    <Prog
+      on:load={() => {
+        progLoaded = true;
+      }}
+      imgPath="/xian_by_one_vch.jpg"
+    />
   {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
   {:else}
@@ -70,16 +87,16 @@
         text="NOSTALGIA"
       />
     </div>
+    <div class="btn-bottom">
+      <ButtonBottom {showProg} on:click={showCard}
+        ><Icon
+          data={thLarge}
+          scale={1.2}
+          style="transform:rotate(90deg)"
+        /></ButtonBottom
+      >
+    </div>
   {/if}
-  <div class="btn-bottom">
-    <ButtonBottom {showProg} on:click={showCard}
-      ><Icon
-        data={thLarge}
-        scale={1.2}
-        style="transform:rotate(90deg)"
-      /></ButtonBottom
-    >
-  </div>
 </main>
 
 <style>

@@ -17,7 +17,7 @@
 </script>
 
 <div class="img" transition:fade={{ duration: 250, easing: sineOut }}>
-  <img src={imgPath} alt="Programme Booklet" />
+  <img on:load src={imgPath} alt="Programme Booklet" />
 </div>
 
 <svelte:window bind:scrollY={scroll} />

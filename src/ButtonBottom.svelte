@@ -1,8 +1,11 @@
 <script>
+  import { fade } from "svelte/transition";
   export let showProg;
 </script>
 
-<button class:on={showProg} class:off={!showProg} on:click><slot /></button>
+<div transition:fade={{ duration: 200 }}>
+  <button class:on={showProg} class:off={!showProg} on:click><slot /></button>
+</div>
 
 <style>
   button {

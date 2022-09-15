@@ -3,11 +3,13 @@
   import Choice from "./Choice.svelte";
   import Button from "./Button.svelte";
   import ButtonBottom from "./ButtonBottom.svelte";
+  import Surveybtn from "./Surveybtn.svelte";
   import Prog from "./Prog.svelte";
 
   import Icon from "svelte-awesome";
   import thLarge from "svelte-awesome/icons/thLarge";
   import font from "svelte-awesome/icons/font";
+  import envelopeOpen from "svelte-awesome/icons/envelopeOpen";
 
   let showProg = true;
   let showChoice = false;
@@ -29,22 +31,18 @@
 </script>
 
 <main>
-  <div class="btn-bottom">
-    <ButtonBottom {showProg} on:click={showCard}
-      ><Icon
-        data={thLarge}
-        scale={1.2}
-        style="transform:rotate(90deg)"
-      /></ButtonBottom
-    >
-  </div>
   {#if showProg}
-    <Prog imgPath="/xian_by_one_espl.jpg" />
+    <Surveybtn formLink={"https://forms.gle/FJzQ6ovsAoiZbPZM8"}
+      ><Icon data={envelopeOpen} scale={1.2} /></Surveybtn
+    >
+    <Prog imgPath="/xian_by_one_vch.jpg" />
   {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
   {:else}
     <div class="btn-top">
-      <Button {toggleText} on:click={flipCards}><Icon data={font} /></Button>
+      <Button {toggleText} on:click={flipCards}
+        ><Icon data={font} scale={1.2} /></Button
+      >
     </div>
     <div class="container">
       <Card
@@ -73,6 +71,15 @@
       />
     </div>
   {/if}
+  <div class="btn-bottom">
+    <ButtonBottom {showProg} on:click={showCard}
+      ><Icon
+        data={thLarge}
+        scale={1.2}
+        style="transform:rotate(90deg)"
+      /></ButtonBottom
+    >
+  </div>
 </main>
 
 <style>

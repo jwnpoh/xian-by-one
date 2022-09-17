@@ -11,6 +11,9 @@
   import font from "svelte-awesome/icons/font";
   import envelopeOpen from "svelte-awesome/icons/envelopeOpen";
 
+  let formLink = "https://xianbyone.paperform.co";
+  let progPath = "/xian_by_one_vch.jpg";
+
   let showProg = true;
   let showChoice = false;
   let toggleText = false;
@@ -34,9 +37,7 @@
 <main>
   {#if showProg}
     {#if progLoaded}
-      <Surveybtn formLink={"https://forms.gle/FJzQ6ovsAoiZbPZM8"}
-        ><Icon data={envelopeOpen} scale={1.2} /></Surveybtn
-      >
+      <Surveybtn {formLink}><Icon data={envelopeOpen} scale={1.2} /></Surveybtn>
       <div class="btn-bottom">
         <ButtonBottom {showProg} on:click={showCard}
           ><Icon
@@ -51,7 +52,7 @@
       on:load={() => {
         progLoaded = true;
       }}
-      imgPath="/xian_by_one_vch.jpg"
+      imgPath={progPath}
     />
   {:else if showChoice}
     <Choice on:click={handleClick} {choiceColor} />
